@@ -40,10 +40,10 @@
 #https://medium.com/clarusway/how-to-use-git-github-without-asking-for-authentication-always-passwordless-usage-of-private-git-8c32489bc2e9
 #https://blog.nillsf.com/index.php/2021/05/27/github-sso-using-password-protected-ssh-keys
 
-project="astra-pkgbuild"
-githubdir="astraosreborn"
+project=$(basename `pwd`)
+githubdir="arch-linux-calamares-installer"
 echo "-----------------------------------------------------------------------------"
-echo "Welcome to the astraOS Project!"
+echo "this is project https://github.com/$githubdir/$project"
 echo "-----------------------------------------------------------------------------"
 
 echo
@@ -56,7 +56,9 @@ echo
 echo "Select the correct desktop"
 echo
 echo "0.  Do nothing"
-echo "1.  ryzenstechdev"
+echo "1.  Erik"
+echo "2.  Raniel"
+echo "3.  Steve"
 echo "Type the number..."
 
 read CHOICE
@@ -74,8 +76,8 @@ case $CHOICE in
     1 )
 			git config --global pull.rebase false
 			git config --global push.default simple
-			git config --global user.name "ryzenstechdev"
-			git config --global user.email "ryzenstech@gmail.com"
+			git config --global user.name "arcolinuxz"
+			git config --global user.email "arcolinuxinfo@gmail.com"
 			sudo git config --system core.editor nano
 			#git config --global credential.helper cache
 			#git config --global credential.helper 'cache --timeout=32000'
@@ -83,7 +85,24 @@ case $CHOICE in
       echo
       echo "Everything set"
       ;;
-    
+    2 )
+			git config --global pull.rebase false
+			git config --global push.default simple
+			git config --global user.name "Raniel Laguna"
+			git config --global user.email "avraniel@gmail.com"
+			sudo git config --system core.editor nano
+			git config --global credential.helper cache
+			git config --global credential.helper 'cache --timeout=32000'
+      ;;
+    3 )
+			git config --global pull.rebase false
+			git config --global push.default simple
+			git config --global user.name "Steve Younger"
+			git config --global user.email "coritanie@gmail.com"
+			sudo git config --system core.editor nano
+			git config --global credential.helper cache
+			git config --global credential.helper 'cache --timeout=32000'
+      ;;
     * )
       echo "#################################"
       echo "Choose the correct number"
